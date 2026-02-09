@@ -1,14 +1,16 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'  
-import Home from './pages/home'
-import Doctors from './pages/doctors'
-import Login from './pages/login'
-import About from './pages/about'
-import Contact from './pages/contact'
-import MyProfile from './pages/myprofile'
-import MyAppointments from './pages/myappointments'
+import Home from './pages/Home'
+import Doctors from './pages/Doctors'
+import Login from './pages/Login'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import MyProfile from './pages/MyProfile'
+import MyAppointments from './pages/MyAppointments'
 import Appointment from './pages/Appointment'
-import Navbar from './components/NAvbar'
+import NotFound from './pages/NotFound'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
     
 const App = () => {
   return (
@@ -24,7 +26,9 @@ const App = () => {
         <Route path='/my-profile' element={<MyProfile />} />
         <Route path='/my-appointments' element={<MyAppointments />} />
         <Route path='/appointment/:docId' element={<Appointment />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
+      <Footer />
     </div>
   )
 }
