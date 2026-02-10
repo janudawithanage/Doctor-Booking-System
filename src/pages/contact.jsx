@@ -2,6 +2,10 @@ import React from 'react'
 import { assets } from '../assets/assets'
 
 const Contact = () => {
+  const handleNotImplemented = () => {
+    alert('Not implemented yet.')
+  }
+
   return (
     <div>
       <div className='text-center text-2xl pt-10 text-gray-500'>
@@ -16,7 +20,7 @@ const Contact = () => {
           <p className='text-gray-500'>Tel: (000) 000-0000 <br /> Email: greatstackdev@gmail.com</p>
           <p className='font-semibold text-lg text-gray-600'>CAREERS AT PRESCRIPTO</p>
           <p className='text-gray-500'>Learn more about our teams and job openings.</p>
-          <button className='border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500'>Explore Jobs</button>
+          <button onClick={handleNotImplemented} className='border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500'>Explore Jobs</button>
         </div>
       </div>
     </div>
