@@ -6,6 +6,11 @@
   font-family: 'Outfit', sans-serif;
 }
 
+body{
+  background-color: #bcbfc4;
+  color: #e2e8f0;
+}
+
 @theme {
   --color-primary: #5f6fff;
 }
