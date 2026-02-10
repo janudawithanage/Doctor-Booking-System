@@ -12,6 +12,10 @@ const Appointment = () => {
   const [slotTime, setSlotTime] = useState('')
   const daysOfWeek = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
 
+  const handleNotImplemented = () => {
+    alert('Not implemented yet.')
+  }
+
   const fetchDocInfo = async () => {
     const docInfo = doctors.find(doc => doc._id === docId)
     setDocInfo(docInfo)
@@ -126,7 +130,7 @@ const Appointment = () => {
             </p>
           ))}
         </div>
-        <button className='bg-primary text-white text-sm font-light px-14 py-3 rounded-full my-6'>Book an appointment</button>
+        <button onClick={handleNotImplemented} className='bg-primary text-white text-sm font-light px-14 py-3 rounded-full my-6'>Book an appointment</button>
       </div>
 
       {/* ----- Related Doctors ----- */}
