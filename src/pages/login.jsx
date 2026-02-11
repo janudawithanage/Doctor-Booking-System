@@ -4,10 +4,15 @@ const Login = () => {
   const [state, setState] = useState('Sign Up')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   const [name, setName] = useState('')
 
   const onSubmitHandler = async (event) => {
     event.preventDefault()
+    if (state === 'Sign Up' && password !== confirmPassword) {
+      alert('Passwords do not match.')
+      return
+    }
     // TODO: Integrate with backend API
   }
 
@@ -32,6 +37,14 @@ const Login = () => {
           <p>Password</p>
           <input className='border border-zinc-300 rounded w-full p-2 mt-1' type="password" onChange={(e) => setPassword(e.target.value)} value={password} required />
         </div>
+        {
+          state === "Sign Up" && (
+            <div className='w-full'>
+              <p>Confirm Password</p>
+              <input className='border border-zinc-300 rounded w-full p-2 mt-1' type="password" onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword} required />
+            </div>
+          )
+        }
         <button type='submit' className='bg-primary text-white w-full py-2 rounded-md text-base'>{state === 'Sign Up' ? "Create account" : "Login"}</button>
         {
           state === "Sign Up"
