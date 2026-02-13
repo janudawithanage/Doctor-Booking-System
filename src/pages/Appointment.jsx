@@ -91,7 +91,7 @@ const Appointment = () => {
             {docInfo.name}
             <img className='w-5' src={assets.verified_icon} alt="Verified" />
           </p>
-          <div className='flex items-center gap-2 text-sm mt-1 text-gray-600'>
+          <div className='flex items-center gap-2 text-sm mt-1 text-gray-800'>
             <p>{docInfo.degree} - {docInfo.speciality}</p>
             <button className='py-0.5 px-2 border text-xs rounded-full'>{docInfo.experience}</button>
           </div>
@@ -101,10 +101,10 @@ const Appointment = () => {
             <p className='flex items-center gap-1 text-sm font-medium text-gray-900 mt-3'>
               About <img src={assets.info_icon} alt="Info" />
             </p>
-            <p className='text-sm text-gray-500 max-w-175 mt-1'>{docInfo.about}</p>
+            <p className='text-sm text-gray-800 max-w-175 mt-1'>{docInfo.about}</p>
           </div>
-          <p className='text-gray-500 font-medium mt-4'>
-            Appointment fee: <span className='text-gray-600'>${docInfo.fees}</span>
+          <p className='text-gray-800 font-medium mt-4'>
+            Appointment fee: <span className='text-gray-800'>${docInfo.fees}</span>
           </p>
         </div>
       </div>
@@ -125,7 +125,7 @@ const Appointment = () => {
 
         <div className='flex items-center gap-3 w-full overflow-x-scroll mt-4'>
           {docSlots.length && docSlots[slotIndex].map((item, index) => (
-            <p onClick={() => setSlotTime(item.time)} className={`text-sm font-light shrink-0 px-5 py-2 rounded-full cursor-pointer ${item.time === slotTime ? 'bg-primary text-white' : 'text-gray-400 border border-gray-300'}`} key={index}>
+            <p onClick={() => setSlotTime(item.time)} className={`text-sm font-light shrink-0 px-5 py-2 rounded-full cursor-pointer ${item.time === slotTime ? 'bg-primary text-white' : 'text-gray-800 border border-gray-300'}`} key={index}>
               {item.time.toLowerCase()}
             </p>
           ))}
@@ -147,7 +147,7 @@ const Appointment = () => {
                   <span>Available</span>
                 </div>
                 <p className='text-gray-900 text-lg font-medium'>{item.name}</p>
-                <p className='text-xs text-gray-600 text-center'>{item.speciality}</p>
+                <p className='text-xs text-gray-800 text-center'>{item.speciality}</p>
               </div>
             </div>
           ))}
