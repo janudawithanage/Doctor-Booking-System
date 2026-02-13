@@ -14,20 +14,26 @@ import Footer from './components/Footer'
     
 const App = () => {
   return (
-    <div className='mx-4 sm:mx-[10%]'>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/doctors' element={<Doctors />} />
-        <Route path='/doctors/:specialty' element={<Doctors />} />
-        <Route path='/login' element={<Login />} /> 
-        <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/my-profile' element={<MyProfile />} />
-        <Route path='/my-appointments' element={<MyAppointments />} />
-        <Route path='/appointment/:docId' element={<Appointment />} />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
+    <div className='min-h-screen flex flex-col bg-gradient-to-b from-white via-blue-50 to-white'>
+      <div className='flex-grow'>
+        <div className='mx-4 sm:mx-[10%]'>
+          <Navbar />
+          <main className='py-8'>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/doctors' element={<Doctors />} />
+              <Route path='/doctors/:specialty' element={<Doctors />} />
+              <Route path='/login' element={<Login />} /> 
+              <Route path='/about' element={<About />} />
+              <Route path='/contact' element={<Contact />} />
+              <Route path='/my-profile' element={<MyProfile />} />
+              <Route path='/my-appointments' element={<MyAppointments />} />
+              <Route path='/appointment/:docId' element={<Appointment />} />
+              <Route path='*' element={<NotFound />} />
+            </Routes>
+          </main>
+        </div>
+      </div>
       <Footer />
     </div>
   )
