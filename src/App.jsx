@@ -11,6 +11,7 @@ import Appointment from './pages/Appointment'
 import NotFound from './pages/NotFound'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
     
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
           </main>
         </div>
       </div>
+      <ScrollToTop />
       <Footer />
     </div>
   )
