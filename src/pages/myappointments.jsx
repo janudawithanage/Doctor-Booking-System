@@ -41,27 +41,27 @@ const MyAppointments = () => {
 
   return (
     <div>
-      <p className='pb-3 mt-12 font-medium text-zinc-700 border-b'>My appointments</p>
+      <p className='pb-4 mt-12 font-bold text-xl text-gray-900 border-b-2 border-gray-300'>My Appointments</p>
       <div>
         {appointments.map((item, index) => (
-          <div className='grid grid-cols-[1fr_2fr] gap-4 sm:flex sm:gap-6 py-2 border-b' key={index}>
+          <div className='grid grid-cols-[1fr_2fr] gap-4 sm:flex sm:gap-6 py-6 border-b border-gray-300' key={index}>
             <div>
-              <img className='w-32 bg-indigo-50' src={item.docData.image} alt={item.docData.name} />
+              <img className='w-32 bg-gradient-to-b from-blue-50 to-blue-100 rounded-lg shadow-md' src={item.docData.image} alt={item.docData.name} />
             </div>
-            <div className='flex-1 text-sm text-zinc-800'>
-              <p className='text-neutral-800 font-semibold'>{item.docData.name}</p>
-              <p>{item.docData.speciality}</p>
-              <p className='text-zinc-700 font-medium mt-1'>Address:</p>
-              <p className='text-xs'>{item.docData.address.line1}</p>
-              <p className='text-xs'>{item.docData.address.line2}</p>
-              <p className='text-xs mt-1'><span className='text-sm text-neutral-700 font-medium'>Date & Time:</span> {item.slotDate} | {item.slotTime}</p>
+            <div className='flex-1 text-sm text-gray-800 bg-white p-4 rounded-lg shadow-sm'>
+              <p className='text-gray-900 font-bold text-lg'>{item.docData.name}</p>
+              <p className='text-gray-700 font-medium text-base mb-3'>{item.docData.speciality}</p>
+              <p className='text-gray-900 font-semibold mt-3'>Address:</p>
+              <p className='text-gray-700 text-xs'>{item.docData.address.line1}</p>
+              <p className='text-gray-700 text-xs'>{item.docData.address.line2}</p>
+              <p className='text-gray-700 text-xs mt-2'><span className='text-gray-900 font-bold'>Date & Time:</span> {item.slotDate} | {item.slotTime}</p>
             </div>
             <div></div>
             <div className='flex flex-col gap-2 justify-end'>
-              {!item.cancelled && item.payment && !item.isCompleted && <button onClick={handleNotImplemented} className='text-sm text-stone-700 text-center sm:min-w-48 py-2 border rounded hover:bg-primary hover:text-white transition-all duration-300'>Pay Online</button>}
-              {!item.cancelled && !item.isCompleted && <button onClick={handleNotImplemented} className='text-sm text-stone-700 text-center sm:min-w-48 py-2 border rounded hover:bg-red-600 hover:text-white transition-all duration-300'>Cancel appointment</button>}
-              {item.cancelled && !item.isCompleted && <button className='sm:min-w-48 py-2 border border-red-500 rounded text-red-500'>Appointment cancelled</button>}
-              {item.isCompleted && <button className='sm:min-w-48 py-2 border border-green-500 rounded text-green-500'>Completed</button>}
+              {!item.cancelled && item.payment && !item.isCompleted && <button onClick={handleNotImplemented} className='text-sm text-gray-700 text-center sm:min-w-48 py-2.5 border-2 border-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 font-semibold'>Pay Online</button>}
+              {!item.cancelled && !item.isCompleted && <button onClick={handleNotImplemented} className='text-sm text-gray-700 text-center sm:min-w-48 py-2.5 border-2 border-red-500 rounded-lg hover:bg-red-600 hover:text-white hover:border-red-600 transition-all duration-300 font-semibold'>Cancel Appointment</button>}
+              {item.cancelled && !item.isCompleted && <button className='sm:min-w-48 py-2.5 border-2 border-red-500 rounded-lg text-red-500 font-semibold bg-red-50'>Appointment Cancelled</button>}
+              {item.isCompleted && <button className='sm:min-w-48 py-2.5 border-2 border-green-500 rounded-lg text-green-600 font-semibold bg-green-50'>Completed</button>}
             </div>
           </div>
         ))}
