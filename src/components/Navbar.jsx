@@ -13,6 +13,12 @@ const Navbar = () => {
     navigate('/login');
   };
 
+  const handleLogout = () => {
+    setToken(false);
+    navigate('/');
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className='flex items-center justify-between text-sm py-5 mb-6 border-b-2 border-b-gray-200 shadow-sm'>
         <img onClick={() => navigate('/')} className='w-44 cursor-pointer hover:opacity-80 transition-opacity' src={assets.logo} alt="Logo" />
@@ -41,11 +47,14 @@ const Navbar = () => {
                     <p onClick={() => navigate('/my-profile')} className='text-gray-800 hover:text-primary cursor-pointer font-medium transition-colors'>My Profile</p>
                     <p onClick={() => navigate('/my-appointments')} className='text-gray-800 hover:text-primary cursor-pointer font-medium transition-colors'>My Appointments</p>
                     <hr className='border-gray-200' />
-                    <p onClick={() => setToken(false)} className='text-red-600 hover:text-red-700 cursor-pointer font-medium transition-colors'>Logout</p>
+                    <p onClick={handleLogout} className='text-red-600 hover:text-red-700 cursor-pointer font-medium transition-colors'>Logout</p>
                   </div>
                 </div>
               </div>
-            : <button onClick={handleLogin} className='bg-gradient-to-r from-primary to-blue-600 text-white px-8 py-3 rounded-full font-semibold hidden md:block hover:shadow-lg transition-all duration-300'>Create Account</button>
+            : <div className='flex items-center gap-3'>
+                <button onClick={handleLogin} className='bg-white text-primary border-2 border-primary px-6 py-2.5 rounded-full font-semibold hidden md:block hover:bg-primary hover:text-white transition-all duration-300'>Login</button>
+                <button onClick={() => navigate('/register')} className='bg-gradient-to-r from-primary to-blue-600 text-white px-6 py-2.5 rounded-full font-semibold hidden md:block hover:shadow-lg transition-all duration-300'>Create Account</button>
+              </div>
           }
         </div>
     </div>
