@@ -3,11 +3,11 @@ import { assets } from '../assets/assets'
 
 const Header = () => {
   return (
-    <div className='flex flex-col md:flex-row flex-wrap bg-gradient-to-r from-primary via-blue-500 to-blue-600 rounded-3xl px-4 sm:px-8 md:px-12 lg:px-24 py-8 md:py-0 shadow-2xl overflow-hidden relative'>
+    <div className='flex flex-col md:flex-row flex-wrap bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 rounded-3xl px-4 sm:px-8 md:px-12 lg:px-24 py-8 md:py-0 shadow-2xl overflow-hidden relative'>
       
       {/* Decorative background elements */}
-      <div className='absolute top-0 right-0 w-96 h-96 bg-white opacity-10 rounded-full blur-3xl -z-10'></div>
-      <div className='absolute bottom-0 left-0 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl -z-10'></div>
+      <div className='absolute top-0 right-0 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl -z-10'></div>
+      <div className='absolute bottom-0 left-0 w-96 h-96 bg-blue-800 opacity-10 rounded-full blur-3xl -z-10'></div>
 
         {/* ----- left side ----- */}
         <div className='w-full md:w-1/2 flex flex-col items-start justify-center gap-6 py-8 md:py-12 lg:py-16'>
@@ -22,7 +22,7 @@ const Header = () => {
                 <p className='text-sm sm:text-base leading-relaxed'>Simply browse through our extensive list of trusted doctors, schedule your appointment with ease.</p>
             </div>
             
-            <a href="#speciality" className='flex items-center justify-center sm:justify-start gap-2 bg-white text-primary px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm md:text-base font-bold hover:shadow-2xl hover:scale-110 transition-all duration-300 w-full sm:w-auto'>
+            <a href="#speciality" className='flex items-center justify-center sm:justify-start gap-2 bg-white text-blue-600 px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm md:text-base font-bold hover:shadow-2xl hover:scale-110 transition-all duration-300 w-full sm:w-auto'>
                 <span>Book Appointment</span>
                 <img className='w-3 sm:w-4' src={assets.arrow_icon} alt="Arrow" />
             </a>
