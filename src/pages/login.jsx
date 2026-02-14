@@ -21,14 +21,14 @@ const Login = () => {
         </div>
         <div className='w-full'>
           <p className='font-semibold text-gray-800 mb-2'>Email</p>
-          <input className='border-2 border-gray-300 rounded-lg w-full p-3 mt-1 focus:border-primary focus:outline-none transition-all' type="email" onChange={(e) => setEmail(e.target.value)} value={email} required />
+          <input className='border-2 border-gray-300 rounded-lg w-full p-3 mt-1 focus:border-blue-600 focus:outline-none transition-all' type="email" onChange={(e) => setEmail(e.target.value)} value={email} required />
         </div>
         <div className='w-full'>
           <p className='font-semibold text-gray-800 mb-2'>Password</p>
-          <input className='border-2 border-gray-300 rounded-lg w-full p-3 mt-1 focus:border-primary focus:outline-none transition-all' type="password" onChange={(e) => setPassword(e.target.value)} value={password} required />
+          <input className='border-2 border-gray-300 rounded-lg w-full p-3 mt-1 focus:border-blue-600 focus:outline-none transition-all' type="password" onChange={(e) => setPassword(e.target.value)} value={password} required />
         </div>
-        <button type='submit' className='bg-gradient-to-r from-primary to-blue-600 text-white w-full py-3 rounded-lg text-base font-semibold hover:shadow-lg transition-all duration-300'>Login</button>
-        <p className='w-full text-center text-gray-700'>Create a new account? <span onClick={() => navigate('/register')} className='text-primary font-semibold underline cursor-pointer hover:text-blue-700'>Click here</span></p>
+        <button type='submit' className='bg-gradient-to-r from-blue-600 to-blue-400 text-white w-full py-3 rounded-lg text-base font-semibold hover:shadow-lg transition-all duration-300'>Login</button>
+        <p className='w-full text-center text-gray-700'>Create a new account? <span onClick={() => navigate('/register')} className='text-blue-600 font-semibold underline cursor-pointer hover:text-blue-700'>Click here</span></p>
       </div>
     </form>
   )

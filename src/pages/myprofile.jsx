@@ -81,8 +81,8 @@ const MyProfile = () => {
       <div className='mt-12'>
         {
           isEdit
-            ? <button className='border-2 border-primary bg-primary text-white px-10 py-2.5 rounded-full hover:shadow-lg transition-all font-semibold' onClick={() => setIsEdit(false)}>Save Information</button>
-            : <button className='border-2 border-primary text-primary px-10 py-2.5 rounded-full hover:bg-primary hover:text-white transition-all font-semibold' onClick={() => setIsEdit(true)}>Edit Profile</button>
+            ? <button className='border-2 border-blue-600 bg-blue-600 text-white px-10 py-2.5 rounded-full hover:shadow-lg transition-all font-semibold' onClick={() => setIsEdit(false)}>Save Information</button>
+            : <button className='border-2 border-blue-600 text-blue-600 px-10 py-2.5 rounded-full hover:bg-blue-600 hover:text-white transition-all font-semibold' onClick={() => setIsEdit(true)}>Edit Profile</button>
         }
       </div>
     </div>

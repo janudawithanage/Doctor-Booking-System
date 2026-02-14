@@ -93,7 +93,7 @@ const Appointment = () => {
           </p>
           <div className='flex items-center gap-3 text-sm mt-3 text-gray-700'>
             <p className='font-medium'>{docInfo.degree} - {docInfo.speciality}</p>
-            <button className='py-1 px-3 border-2 border-primary text-xs rounded-full font-semibold text-primary hover:bg-primary hover:text-white transition-all'>{docInfo.experience}</button>
+            <button className='py-1 px-3 border-2 border-blue-600 text-xs rounded-full font-semibold text-blue-600 hover:bg-blue-600 hover:text-white transition-all'>{docInfo.experience}</button>
           </div>
 
           {/* ----- Doctor About ----- */}
