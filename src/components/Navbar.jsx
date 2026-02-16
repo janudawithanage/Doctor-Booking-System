@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className='flex items-center justify-between text-sm py-5 mb-6 border-b-2 border-b-gray-200 shadow-sm'>
+    <div className='flex items-center justify-between text-sm py-5 border-b-2 border-b-gray-200 shadow-sm'>
         <img onClick={() => navigate('/')} className='w-44 cursor-pointer hover:opacity-80 transition-opacity' src={assets.logo} alt="Logo" />
         <ul className='hidden md:flex items-center gap-8 font-semibold text-gray-700'>
           <NavLink to='/' className={({ isActive }) => isActive ? 'text-primary border-b-3 border-primary pb-1' : 'hover:text-primary transition-colors'}>
