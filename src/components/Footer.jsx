@@ -99,20 +99,20 @@ const Footer = () => {
         <div className='py-8'>
           <div className='flex flex-col md:flex-row justify-between items-center gap-4 mb-6'>
             <p className='text-sm text-gray-400'>
-              © 2026 <span className='text-primary font-bold'>Prescripto</span> • All Rights Reserved
+              © 2026 <span className='text-blue-400 font-bold'>Prescripto</span> • All Rights Reserved
             </p>
             <div className='flex gap-6 flex-wrap justify-center'>
-              <a href='#' className='text-xs text-gray-400 hover:text-primary transition-colors duration-300'>Terms</a>
-              <span className='text-gray-700'>|</span>
-              <a href='#' className='text-xs text-gray-400 hover:text-primary transition-colors duration-300'>Privacy</a>
-              <span className='text-gray-700'>|</span>
-              <a href='#' className='text-xs text-gray-400 hover:text-primary transition-colors duration-300'>Cookies</a>
-              <span className='text-gray-700'>|</span>
-              <a href='#' className='text-xs text-gray-400 hover:text-primary transition-colors duration-300'>Accessibility</a>
+              <a href='#' className='text-xs text-gray-400 hover:text-blue-400 transition-colors duration-300'>Terms</a>
+              <span className='text-gray-600'>|</span>
+              <a href='#' className='text-xs text-gray-400 hover:text-blue-400 transition-colors duration-300'>Privacy</a>
+              <span className='text-gray-600'>|</span>
+              <a href='#' className='text-xs text-gray-400 hover:text-blue-400 transition-colors duration-300'>Cookies</a>
+              <span className='text-gray-600'>|</span>
+              <a href='#' className='text-xs text-gray-400 hover:text-blue-400 transition-colors duration-300'>Accessibility</a>
             </div>
           </div>
           <p className='text-xs text-gray-500 text-center'>
-            Designed with ❤️ by <span className='text-primary font-semibold'>Januda Withanage</span>
+            Designed with ❤️ by <span className='text-blue-400 font-semibold'>Januda Withanage</span>
           </p>
         </div>
       </div>

@@ -16,7 +16,7 @@ import ScrollToTop from './components/ScrollToTop'
     
 const App = () => {
   return (
-    <div className='min-h-screen flex flex-col bg-gradient-to-b from-white via-blue-50 to-white'>
+    <div className='min-h-screen flex flex-col bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900'>
       <div className='flex-grow'>
         <div className='mx-4 sm:mx-[10%]'>
           <Navbar />

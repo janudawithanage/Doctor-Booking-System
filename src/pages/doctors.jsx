@@ -39,15 +39,15 @@ const Doctors = () => {
         <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
           {
             filterDoc.map((item, index) => (
-              <div onClick={() => navigate(`/appointment/${item._id}`)} className='border-0 rounded-2xl overflow-hidden cursor-pointer hover:-translate-y-3 transition-all duration-500 bg-white shadow-md hover:shadow-xl group' key={index}>
-                <img className='bg-gradient-to-b from-blue-50 to-blue-100 w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300' src={item.image} alt={item.name} />
+              <div onClick={() => navigate(`/appointment/${item._id}`)} className='border border-gray-700 rounded-2xl overflow-hidden cursor-pointer hover:-translate-y-3 transition-all duration-500 bg-slate-800 shadow-md hover:shadow-xl group' key={index}>
+                <img className='bg-gradient-to-b from-slate-700 to-slate-600 w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300' src={item.image} alt={item.name} />
                 <div className='p-5'>
-                  <div className='flex items-center gap-2 text-sm text-green-600 mb-3 font-medium'>
-                    <span className='w-2.5 h-2.5 bg-green-600 rounded-full animate-pulse'></span>
+                  <div className='flex items-center gap-2 text-sm text-green-400 mb-3 font-medium'>
+                    <span className='w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse'></span>
                     <span>Available</span>
                   </div>
-                  <p className='text-gray-900 text-lg font-bold'>{item.name}</p>
-                  <p className='text-gray-600 text-sm font-medium mt-2'>{item.speciality}</p>
+                  <p className='text-gray-100 text-lg font-bold'>{item.name}</p>
+                  <p className='text-gray-300 text-sm font-medium mt-2'>{item.speciality}</p>
                 </div>
               </div>
             ))
