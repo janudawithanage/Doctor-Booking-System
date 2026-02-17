@@ -9,7 +9,7 @@ const SpeacialityMenu = () => {
             <h1 className='text-4xl md:text-5xl font-bold mb-4 text-gray-100'>Find by Speciality</h1>
             <p className='sm:w-1/3 text-center text-gray-300 text-base mx-auto'>Simply browse through our extensive list of trusted doctors, schedule your appointment hassle-free.</p>
         </div>
-        <div className='flex sm:justify-center gap-6 pt-8 w-full overflow-scroll px-4'>
+        <div className='flex sm:justify-center gap-6 pt-8 w-full overflow-x-auto scrollbar-hide px-4'>
             {specialityData.map((item, index) => (
                 <Link onClick={()=>scrollTo(0,0)} className='flex flex-col items-center text-xs cursor-pointer shrink-0 hover:-translate-y-3 transition-all duration-500 group' key={index} to={`/doctors/${item.speciality}`}>
                     <div className='rounded-full overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 mb-3'>
