@@ -7,7 +7,7 @@ const Footer = () => {
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 py-16'>
           {/* ----- Logo Section ----- */}
           <div className='md:col-span-1'>
-            <img className='mb-6 w-40 filter invert' src={assets.logo} alt="Logo" />
+            <img className='mb-6 w-40' src={assets.logo} alt="Logo" />
             <p className='text-gray-400 leading-7 text-sm mb-6'>
               Prescripto connects you with trusted healthcare professionals for seamless appointment scheduling.
             </p>
