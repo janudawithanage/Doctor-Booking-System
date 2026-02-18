@@ -1,6 +1,8 @@
 import { assets } from '../assets/assets'
+import { useNavigate } from 'react-router-dom'
 
 const Footer = () => {
+  const navigate = useNavigate()
   return (
     <footer className='bg-gradient-to-b from-gray-900 to-black text-white mt-20'>
       <div className='max-w-7xl mx-auto px-6 md:px-10'>
@@ -30,16 +32,16 @@ const Footer = () => {
               <span className='w-1 h-6 bg-primary rounded-full'></span>Quick Links
             </h3>
             <ul className='space-y-3'>
-              <li className='text-gray-400 hover:text-primary cursor-pointer transition-colors duration-300 flex items-center gap-2'>
+              <li onClick={() => {navigate('/'); window.scrollTo(0, 0)}} className='text-gray-400 hover:text-primary cursor-pointer transition-colors duration-300 flex items-center gap-2'>
                 <span className='text-primary'>→</span> Home
               </li>
-              <li className='text-gray-400 hover:text-primary cursor-pointer transition-colors duration-300 flex items-center gap-2'>
+              <li onClick={() => {navigate('/doctors'); window.scrollTo(0, 0)}} className='text-gray-400 hover:text-primary cursor-pointer transition-colors duration-300 flex items-center gap-2'>
                 <span className='text-primary'>→</span> All Doctors
               </li>
-              <li className='text-gray-400 hover:text-primary cursor-pointer transition-colors duration-300 flex items-center gap-2'>
+              <li onClick={() => {navigate('/about'); window.scrollTo(0, 0)}} className='text-gray-400 hover:text-primary cursor-pointer transition-colors duration-300 flex items-center gap-2'>
                 <span className='text-primary'>→</span> About Us
               </li>
-              <li className='text-gray-400 hover:text-primary cursor-pointer transition-colors duration-300 flex items-center gap-2'>
+              <li onClick={() => {navigate('/contact'); window.scrollTo(0, 0)}} className='text-gray-400 hover:text-primary cursor-pointer transition-colors duration-300 flex items-center gap-2'>
                 <span className='text-primary'>→</span> Contact
               </li>
             </ul>
