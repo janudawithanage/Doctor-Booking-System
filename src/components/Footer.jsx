@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 const Footer = () => {
   const navigate = useNavigate()
   return (
-    <footer className='bg-gradient-to-b from-gray-900 to-black text-white mt-20'>
+    <footer className='bg-linear-to-b from-gray-900 to-black text-white mt-20'>
       <div className='max-w-7xl mx-auto px-6 md:px-10'>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 py-16'>
           {/* ----- Logo Section ----- */}
