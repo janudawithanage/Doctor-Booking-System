@@ -7,6 +7,7 @@ const Navbar = () => {
   const location = useLocation();
   
   const [showMenu, setShowMenu] = useState(false);
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [token, setToken] = useState(true); // Change to false initially, set to true after login
 
   const handleLogin = () => {
@@ -15,6 +16,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     setToken(false);
+    setShowProfileMenu(false);
     navigate('/');
     window.scrollTo(0, 0);
   };
@@ -51,9 +53,21 @@ const Navbar = () => {
           {
             token 
             ? <div className='flex items-center gap-2 cursor-pointer group relative'>
-                <img className='w-10 h-10 rounded-full shadow-md hover:shadow-lg transition-shadow' src={assets.profile_pic} alt="Profile" />
-                <img className='w-2.5 text-gray-700 hidden md:block' src={assets.dropdown_icon} alt="Dropdown" />
-                <div className='absolute top-0 right-0 pt-16 text-base font-medium z-20 hidden group-hover:block'>
+                <img 
+                  onClick={() => setShowProfileMenu(!showProfileMenu)}
+                  className='w-10 h-10 rounded-full shadow-md hover:shadow-lg transition-shadow' 
+                  src={assets.profile_pic} 
+                  alt="Profile" 
+                />
+                <img 
+                  onClick={() => setShowProfileMenu(!showProfileMenu)}
+                  className='w-2.5 text-gray-700 cursor-pointer' 
+                  src={assets.dropdown_icon} 
+                  alt="Dropdown" 
+                />
+                
+                {/* Desktop Dropdown (hover) */}
+                <div className='absolute top-0 right-0 pt-16 text-base font-medium z-20 hidden md:group-hover:block'>
                   <div className='min-w-48 bg-[#1e293b] rounded-lg shadow-2xl flex flex-col gap-3 p-5 border border-gray-100'>
                     <p onClick={() => navigate('/my-profile')} className='text-white hover:text-yellow-300 cursor-pointer font-medium transition-colors'>My Profile</p>
                     <p onClick={() => navigate('/my-appointments')} className='text-white hover:text-yellow-300 cursor-pointer font-medium transition-colors'>My Appointments</p>
@@ -61,6 +75,24 @@ const Navbar = () => {
                     <p onClick={handleLogout} className='text-red-400 hover:text-red-600 cursor-pointer font-medium transition-colors'>Logout</p>
                   </div>
                 </div>
+                
+                {/* Mobile Dropdown (click) */}
+                {showProfileMenu && (
+                  <div className='absolute top-0 right-0 pt-16 text-base font-medium z-20 md:hidden'>
+                    <div className='min-w-48 bg-[#1e293b] rounded-lg shadow-2xl flex flex-col gap-3 p-5 border border-gray-100'>
+                      <p onClick={() => {
+                        navigate('/my-profile');
+                        setShowProfileMenu(false);
+                      }} className='text-white hover:text-yellow-300 cursor-pointer font-medium transition-colors'>My Profile</p>
+                      <p onClick={() => {
+                        navigate('/my-appointments');
+                        setShowProfileMenu(false);
+                      }} className='text-white hover:text-yellow-300 cursor-pointer font-medium transition-colors'>My Appointments</p>
+                      <hr className='border-gray-200' />
+                      <p onClick={handleLogout} className='text-red-400 hover:text-red-600 cursor-pointer font-medium transition-colors'>Logout</p>
+                    </div>
+                  </div>
+                )}
               </div>
             : <div className='flex items-center gap-3'>
                 <button onClick={handleLogin} className='bg-white text-blue-600 border-2 border-blue-600 px-6 py-2.5 rounded-full font-semibold hidden md:block hover:bg-blue-600 hover:text-white transition-all duration-300'>Login</button>
