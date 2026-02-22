@@ -21,21 +21,42 @@ const Doctors = () => {
     applyFilter()
   }, [specialty])
 
+  const handleFilterSelect = (selectedSpecialty) => {
+    if (specialty === selectedSpecialty) {
+      navigate('/doctors')
+    } else {
+      navigate(`/doctors/${selectedSpecialty}`)
+    }
+    setShowFilter(false)
+  }
+
   return (
     <div>
       <div className='mb-8'>
         <p className='text-gray-200 text-lg font-medium'>Browse through the doctors specialist.</p>
       </div>
-      <div className='flex flex-col sm:flex-row items-start gap-8'>
+      <div className='flex flex-col sm:flex-row items-start gap-8 relative'>
         <button className={`py-2.5 px-4 border-2 rounded-lg text-sm font-medium transition-all sm:hidden ${showFilter ? 'bg-blue-500 text-white border-blue-500' : 'bg-slate-800 border-gray-600 text-gray-200'}`} onClick={() => setShowFilter(prev => !prev)}>Filters</button>
-        <div className={`flex-col gap-3 text-sm ${showFilter ? 'flex' : 'hidden sm:flex'} w-full sm:w-48`}>
-          <p onClick={() => specialty === 'General physician' ? navigate('/doctors') : navigate('/doctors/General physician')} className={`w-full pl-4 py-2.5 border-2 rounded-lg transition-all cursor-pointer font-medium ${specialty === 'General physician' ? 'bg-blue-500 text-white border-blue-500' : 'bg-slate-800 border-gray-600 text-gray-200 hover:border-blue-500'}`}>General physician</p>
-          <p onClick={() => specialty === 'Gynecologist' ? navigate('/doctors') : navigate('/doctors/Gynecologist')} className={`w-full pl-4 py-2.5 border-2 rounded-lg transition-all cursor-pointer font-medium ${specialty === 'Gynecologist' ? 'bg-blue-500 text-white border-blue-500' : 'bg-slate-800 border-gray-600 text-gray-200 hover:border-blue-500'}`}>Gynecologist</p>
-          <p onClick={() => specialty === 'Dermatologist' ? navigate('/doctors') : navigate('/doctors/Dermatologist')} className={`w-full pl-4 py-2.5 border-2 rounded-lg transition-all cursor-pointer font-medium ${specialty === 'Dermatologist' ? 'bg-blue-500 text-white border-blue-500' : 'bg-slate-800 border-gray-600 text-gray-200 hover:border-blue-500'}`}>Dermatologist</p>
-          <p onClick={() => specialty === 'Pediatricians' ? navigate('/doctors') : navigate('/doctors/Pediatricians')} className={`w-full pl-4 py-2.5 border-2 rounded-lg transition-all cursor-pointer font-medium ${specialty === 'Pediatricians' ? 'bg-blue-500 text-white border-blue-500' : 'bg-slate-800 border-gray-600 text-gray-200 hover:border-blue-500'}`}>Pediatricians</p>
-          <p onClick={() => specialty === 'Neurologist' ? navigate('/doctors') : navigate('/doctors/Neurologist')} className={`w-full pl-4 py-2.5 border-2 rounded-lg transition-all cursor-pointer font-medium ${specialty === 'Neurologist' ? 'bg-blue-500 text-white border-blue-500' : 'bg-slate-800 border-gray-600 text-gray-200 hover:border-blue-500'}`}>Neurologist</p>
-          <p onClick={() => specialty === 'Gastroenterologist' ? navigate('/doctors') : navigate('/doctors/Gastroenterologist')} className={`w-full pl-4 py-2.5 border-2 rounded-lg transition-all cursor-pointer font-medium ${specialty === 'Gastroenterologist' ? 'bg-blue-500 text-white border-blue-500' : 'bg-slate-800 border-gray-600 text-gray-200 hover:border-blue-500'}`}>Gastroenterologist</p>
+        
+        {/* Mobile Filter Overlay */}
+        {showFilter && (
+          <div className='fixed inset-0 bg-black/50 z-40 sm:hidden' onClick={() => setShowFilter(false)}></div>
+        )}
+        
+        {/* Filter Panel */}
+        <div className={`flex-col gap-3 text-sm ${showFilter ? 'flex' : 'hidden sm:flex'} w-full sm:w-48 sm:relative sm:z-0 z-50 fixed sm:fixed bottom-0 sm:bottom-auto left-0 sm:left-0 right-0 sm:right-auto bg-slate-900 sm:bg-transparent p-4 sm:p-0 rounded-t-xl sm:rounded-none`}>
+          <div className='flex justify-between items-center sm:hidden mb-3'>
+            <p className='text-gray-200 font-semibold'>Specialties</p>
+            <button onClick={() => setShowFilter(false)} className='text-gray-400 hover:text-white text-xl'>✕</button>
+          </div>
+          <p onClick={() => handleFilterSelect('General physician')} className={`w-full pl-4 py-2.5 border-2 rounded-lg transition-all cursor-pointer font-medium ${specialty === 'General physician' ? 'bg-blue-500 text-white border-blue-500' : 'bg-slate-800 border-gray-600 text-gray-200 hover:border-blue-500'}`}>General physician</p>
+          <p onClick={() => handleFilterSelect('Gynecologist')} className={`w-full pl-4 py-2.5 border-2 rounded-lg transition-all cursor-pointer font-medium ${specialty === 'Gynecologist' ? 'bg-blue-500 text-white border-blue-500' : 'bg-slate-800 border-gray-600 text-gray-200 hover:border-blue-500'}`}>Gynecologist</p>
+          <p onClick={() => handleFilterSelect('Dermatologist')} className={`w-full pl-4 py-2.5 border-2 rounded-lg transition-all cursor-pointer font-medium ${specialty === 'Dermatologist' ? 'bg-blue-500 text-white border-blue-500' : 'bg-slate-800 border-gray-600 text-gray-200 hover:border-blue-500'}`}>Dermatologist</p>
+          <p onClick={() => handleFilterSelect('Pediatricians')} className={`w-full pl-4 py-2.5 border-2 rounded-lg transition-all cursor-pointer font-medium ${specialty === 'Pediatricians' ? 'bg-blue-500 text-white border-blue-500' : 'bg-slate-800 border-gray-600 text-gray-200 hover:border-blue-500'}`}>Pediatricians</p>
+          <p onClick={() => handleFilterSelect('Neurologist')} className={`w-full pl-4 py-2.5 border-2 rounded-lg transition-all cursor-pointer font-medium ${specialty === 'Neurologist' ? 'bg-blue-500 text-white border-blue-500' : 'bg-slate-800 border-gray-600 text-gray-200 hover:border-blue-500'}`}>Neurologist</p>
+          <p onClick={() => handleFilterSelect('Gastroenterologist')} className={`w-full pl-4 py-2.5 border-2 rounded-lg transition-all cursor-pointer font-medium ${specialty === 'Gastroenterologist' ? 'bg-blue-500 text-white border-blue-500' : 'bg-slate-800 border-gray-600 text-gray-200 hover:border-blue-500'}`}>Gastroenterologist</p>
         </div>
+        
         <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
           {
             filterDoc.map((item, index) => (
